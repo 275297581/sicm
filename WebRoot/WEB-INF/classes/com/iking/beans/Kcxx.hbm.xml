@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Kcxx" lazy="false" table="kcxx" catalog="sicm">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        <property name="kcmc" type="java.lang.String">
+            <column name="kcmc" length="20">
+                <comment>课程名称</comment>
+            </column>
+        </property>
+        <property name="bz1" type="java.lang.String">
+            <column name="bz1" length="20">
+                <comment>备注1</comment>
+            </column>
+        </property>
+        <property name="bz2" type="java.lang.String">
+            <column name="bz2" length="20">
+                <comment>备注2</comment>
+            </column>
+        </property>
+        <property name="bz3" type="java.lang.String">
+            <column name="bz3" length="20">
+                <comment>备注3</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

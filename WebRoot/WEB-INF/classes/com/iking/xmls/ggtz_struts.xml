@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    <struts>
+    	<package name="ggtz1" namespace="/" extends="json-default">
+    		<action name="pub_queryNotice" class="noticeAction" method="queryNotice" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+	   	  	
+	   	  	<action name="pub_showDetilNotice" class="noticeAction" method="showDetilNotice" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="pub_showAllNotice" class="noticeAction" method="pubshowAllNotice" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+   	  		<action name="showAllNotice" class="noticeAction" method="showAllNotice" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="queryAllNotice" class="noticeAction" method="queryAllNotice" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="noticeadd" class="noticeAction" method="addGg" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="deletgg" class="noticeAction" method="deleteGg" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="deletgg1" class="noticeAction" method="deleteGG" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="pubgg" class="noticeAction" method="pubGg" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="pubzd" class="noticeAction" method="pubZd" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="pubzdqx" class="noticeAction" method="pubzdQx" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="modinfyPub" class="noticeAction" method="ModinfyPub" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="pubpxsy" class="noticeAction" method="pubPxSy" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="pubpxxy" class="noticeAction" method="pubPxXy" >
+	    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	</package>
+    	  	 <constant name="struts.i18n.encoding" value="UTF-8" />
+    </struts>

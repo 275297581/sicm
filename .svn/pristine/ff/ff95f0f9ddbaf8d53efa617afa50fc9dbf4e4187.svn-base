@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Sysrole" table="sysrole" catalog="sicm">
+        <id name="rid" type="java.lang.Integer">
+            <column name="RID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="roleName" type="java.lang.String">
+            <column name="RoleName" length="20" not-null="true">
+                <comment>角色名称</comment>
+            </column>
+        </property>
+        <property name="descr" type="java.lang.String">
+            <column name="Descr" length="200">
+                <comment>角色描述</comment>
+            </column>
+        </property>
+        <property name="locked" type="java.lang.Boolean">
+            <column name="Locked" not-null="true">
+                <comment>是否锁定</comment>
+            </column>
+        </property>
+        <set name="userroles" inverse="true" cascade="delete">
+            <key>
+                <column name="RID" not-null="true">
+                    <comment>角色编号</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Userrole" />
+        </set>
+        <set name="rolemenus" inverse="true">
+            <key>
+                <column name="RID" not-null="true">
+                    <comment>角色编号</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Rolemenu" />
+        </set>
+    </class>
+</hibernate-mapping>

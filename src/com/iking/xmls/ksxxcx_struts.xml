@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    <struts> 
+   	  	<package name="ksxxcx2" namespace="/" extends="json-default">
+   	  	
+	   	  	<action name="queryxy" class="stuManageAction" method="queryXY" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+   	  		<action name="queryzy" class="stuManageAction" method="queryZY" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="queryjdzy" class="stuManageAction" method="queryjdzy" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="querybj" class="stuManageAction" method="queryBJ" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>    
+    	  	<action name="getzyzs" class="stuManageAction" method="getZyzs" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="getlx"  class="stuManageAction" method="getZsLX" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	 
+    	  	<action name="querystu" class="stuManageAction" method="queryStu" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="modifypwd" class="stuManageAction" method="modifyPwd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="queryKS" class="stuManageAction" method="queryKS" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+   	  	 	<action name="querystubyxsid" class="stuAction" method="queryStuByXsid" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	 <action name="queryOnesCore" class="stuAction" method="queryOnesCoreByXsid" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="queryscore" class="stuAction" method="queryCoreByXsid" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="querykszs" class="stuAction" method="queryKszsByXsid" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="querykaoshibyid" class="stuManageAction" method="queryKaoShiById" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	
+    	  	<action name="queryBankInfo" class="stuManageAction" method="queryBankInfo" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="modifyYhzh" class="stuManageAction" method="modifyYhzh" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="stuLuru" class="stuAction" method="stuLuru" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="updatestu" class="stuAction" method="updatestu" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="saveZs" class="stuAction" method="saveZs" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="queryKszsbyid" class="stuAction" method="queryKszsbyid" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="updatezs" class="stuAction" method="updatezs" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="deletestu" class="stuAction" method="deletestu" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="addCheck" class="stuAction" method="addCheck" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	<action name="selectZdy" class="stuAction" method="selectZdy" >
+    	  		<result name="success" type="json"></result>
+    	  	</action>
+    	  	
+    	  	<action name="saveKcxx"  class="stuAction" method="saveKcxx">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<!-- 时间录入模块 -->
+    	  	<action name="saveTime"  class="stuAction" method="saveTime">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<!-- 课程录入模块 
+    	  	<action name="saveKcxx"  class="kcxxAction" method="saveKcxx">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	-->
+    	  	<action name="selectKcxx"  class="stuAction" method="selectKcxx">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  		<action name="deleteKcxx"  class="stuAction" method="deleteKcxx">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	</package>
+    </struts>

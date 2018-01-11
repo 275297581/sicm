@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  
+<hibernate-mapping>
+    <class name="com.iking.beans.Sysmenu" table="sysmenu" catalog="sicm">
+        <id name="mid" type="java.lang.Integer">
+            <column name="MID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="menuName" type="java.lang.String">
+            <column name="MenuName" length="20" not-null="true">
+                <comment>菜单名</comment>
+            </column>
+        </property>
+        <property name="url" type="java.lang.String">
+            <column name="URL" length="100">
+                <comment>菜单链接</comment>
+            </column>
+        </property>
+        <property name="parent" type="java.lang.Integer">
+            <column name="Parent" not-null="true">
+                <comment>父菜单</comment>
+            </column>
+        </property>
+        <property name="locked" type="java.lang.Boolean">
+            <column name="Locked" not-null="true">
+                <comment>是否可用</comment>
+            </column>
+        </property>
+        <property name="descr" type="java.lang.String">
+            <column name="Descr" length="20">
+                <comment>描述</comment>
+            </column>
+        </property>
+        <property name="reamrk1" type="java.lang.String">
+            <column name="Reamrk1" length="200">
+                <comment>备注1</comment>
+            </column>
+        </property>
+        <property name="reamrk2" type="java.lang.String">
+            <column name="Reamrk2" length="200">
+                <comment>备注2</comment>
+            </column>
+        </property>
+        <set name="rolemenus" inverse="true">
+            <key>
+                <column name="MID" not-null="true">
+                    <comment>菜单编号</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Rolemenu" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.iking.beans.Zyzs" table="zyzs" lazy="false" catalog="sicm">
+        <id name="zsid" type="java.lang.Integer">
+            <column name="zsid" />
+            <generator class="native" />
+        </id>
+        <property name="zsmc" type="java.lang.String">
+            <column name="zsmc" length="200">
+                <comment>证书名称</comment>
+            </column>
+        </property>
+        <property name="fzjg" type="java.lang.String">
+            <column name="fzjg" length="200">
+                <comment>发证机构</comment>
+            </column>
+        </property>
+        <property name="zsdj" type="java.lang.String">
+            <column name="zsdj" length="100">
+                <comment>证书等级</comment>
+            </column>
+        </property>
+        <property name="zsfl" type="java.lang.String">
+            <column name="zsfl" length="100">
+                <comment>证书分类</comment>
+            </column>
+        </property>
+        <property name="jlbz" type="java.lang.String">
+            <column name="jlbz" length="100">
+                <comment>奖励标准</comment>
+            </column>
+        </property>
+        <property name="xf" type="java.lang.String">
+            <column name="xf" length="100">
+                <comment>学分</comment>
+            </column>
+        </property>
+        <property name="bz" type="java.lang.String">
+            <column name="bz" length="100">
+                <comment>备注</comment>
+            </column>
+        </property>
+         <property name="xymc" type="java.lang.String">
+            <column name="xymc" length="100">
+                <comment>学院名称</comment>
+            </column>
+        </property>
+         <property name="zymc" type="java.lang.String">
+            <column name="zymc" length="100">
+                <comment>专业名称</comment>
+            </column>
+        </property> 
+        <set name="bmxxes" inverse="true">
+            <key>
+                <column name="zsid">
+                    <comment>（证书id）鉴定职业</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Bmxx" />
+        </set>
+        <set name="xwzsrds" inverse="true">
+            <key>
+                <column name="zsid">
+                    <comment>证书id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Xwzsrd" />
+        </set>
+        <set name="kszses" inverse="true">
+            <key>
+                <column name="zsid">
+                    <comment>证书id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Kszs" />
+        </set>
+    </class>
+</hibernate-mapping>

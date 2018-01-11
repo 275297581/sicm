@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="jcsj1" namespace="/" extends="struts-default">
+
+		<action name="uploadstuinfo" class="stuXlsAction" method="uploadStuInfo">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+		
+		<action name="uploadzyzsinfo" class="zyzsXlsAction" method="uploadZyzsInfo">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+		
+		<action name="uploadkszsinfo" class="kszsXlsAction" method="uploadKszsInfo">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+
+		<action name="uploadStuScore" class="stuScoreXlsAction" method="uploadStuScore">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+		<action name="uploadstubm" class="stuBmXlsAction" method="uploadStuBm">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action> 
+		<action name="uploadxyzyinfo" class="xyZyXlsAction" method="uploadZyZy">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+		<action name="uploadxwzsinfo"  class="kszsXlsAction" method="uploadXwZsinfo">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+		
+		<action name="uploadBankInfo"  class="bankXlsAction" method="uploadBankInfo">
+			<result name="success">/pages/jcsj/Success.jsp</result>
+			<result name="error">/pages/jcsj/Wrong.jsp</result>
+		</action>
+		<action name="downzyzsxls" class="zyzsXlsAction" method="downZyzsXls">
+    	  		<result name="success" type="stream"> 
+    	  			 <param name="inputName">inputStream</param> 
+			        <param name="contentDisposition">
+			            attachment;filename="${filename}"
+			        </param>
+			        <param name="bufferSize">8192</param>  
+    	  		</result>
+    	  </action>
+    	  <action name="downkszsxls" class="kszsXlsAction" method="downKszsXls">
+    	  		<result name="success" type="stream"> 
+    	  			 <param name="inputName">inputStream</param>
+    	  			  <!--动态获取文件名，从Action中的取得filename-->
+			        <param name="contentDisposition">
+			            attachment;filename="${filename}"
+			        </param>
+			        <param name="bufferSize">8192</param>  
+    	  		</result>
+    	  </action>
+		
+		<action name="downstuxls" class="stuXlsAction" method="downStuXls">
+			<result name="success" type="stream">
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${filename}"
+				</param>
+				<param name="bufferSize">8192</param>
+			</result>
+		</action>
+
+		<action name="downstubmxls" class="stuBmXlsAction" method="downStuBmXls">
+			<result name="success" type="stream">
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${filename}"
+				</param>
+				<param name="bufferSize">8192</param>
+			</result>
+		</action>
+
+		<action name="downStuScoreXls" class="stuScoreXlsAction"
+			method="downStuScoreXls">
+			<result name="success" type="stream">
+				<param name="inputName">inputStream</param>
+				<!--动态获取文件名，从Action中的取得filename -->
+				<param name="contentDisposition">
+					attachment;filename="${filename}"
+				</param>
+				<param name="bufferSize">8192</param>
+			</result>
+		</action>
+		<action name="downXyZyXls" class="xyZyXlsAction" method="downXyZyXls">
+    	  		<result name="success" type="stream"> 
+    	  			 <param name="inputName">inputStream</param> 
+			        <param name="contentDisposition">
+			            attachment;filename="${filename}"
+			        </param>
+			        <param name="bufferSize">8192</param>  
+    	  		</result>
+    	  </action>
+   	  <action name="downBankxls" class="bankXlsAction" method="downBankxls">
+		<result name="success" type="stream">
+			<param name="inputName">inputStream</param>
+			<!--动态获取文件名，从Action中的取得filename -->
+			<param name="contentDisposition">
+				attachment;filename="${filename}"
+			</param>
+			<param name="bufferSize">8192</param>
+		</result>
+	</action>
+	</package>
+
+	<package name="jcsj2" namespace="/" extends="json-default">
+	</package>
+</struts>

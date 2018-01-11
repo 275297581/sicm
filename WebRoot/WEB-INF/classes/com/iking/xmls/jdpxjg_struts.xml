@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    <struts>
+    	
+    	<package name="jdkd1" namespace="/" extends="json-default">
+    	
+    	  	<action name="addjdkd" class="jdGroupAction" method="addJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	
+    	  	<action name="queryJdKd"  class="jdGroupAction" method="queryJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="querydshJdKd"  class="jdGroupAction" method="querydshJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="showJdKd" class="jdGroupAction" method="showJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="deletejdkd" class="jdGroupAction" method="deleteJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="queryOneJdKd" class="jdGroupAction" method="queryOneJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="modifyjdkd" class="jdGroupAction" method="modifyJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="bhjdkd" class="jdGroupAction" method="bhJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="agreejdkd" class="jdGroupAction" method="agreeJdKd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+   	  	</package>
+    </struts>

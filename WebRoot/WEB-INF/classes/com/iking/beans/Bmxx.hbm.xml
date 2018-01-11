@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Bmxx" lazy="false" table="bmxx" catalog="sicm">
+        <id name="bmid" type="java.lang.Integer">
+            <column name="bmid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="stu" class="com.iking.beans.Stu" fetch="select" cascade="all">
+            <column name="xsid">
+                <comment>学生id</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="kdxxByWykd" class="com.iking.beans.Kdxx" fetch="select">
+            <column name="wykd">
+                <comment>外语考点</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="zyzs" class="com.iking.beans.Zyzs" fetch="select">
+            <column name="zsid">
+                <comment>（证书id）鉴定职业</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="kdxxByLlkd" class="com.iking.beans.Kdxx" fetch="select">
+            <column name="llkd">
+                <comment>理论考点</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="kdxxByZhkd" class="com.iking.beans.Kdxx" fetch="select">
+            <column name="zhkd">
+                <comment>综合考点</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="kdxxBySckd" class="com.iking.beans.Kdxx" fetch="select">
+            <column name="sckd">
+                <comment>实操考点</comment>
+            </column>
+        </many-to-one>
+        <property name="bmsj" type="java.lang.String">
+            <column name="bmsj" length="100">
+                <comment>报名导入时间</comment>
+            </column>
+        </property>
+        <property name="sfzh" type="java.lang.String">
+            <column name="sfzh" length="100">
+                <comment>身份证号</comment>
+            </column>
+        </property>
+        <property name="whcd" type="java.lang.String">
+            <column name="whcd" length="100">
+                <comment>文化程度</comment>
+            </column>
+        </property>
+        <property name="gzdw" type="java.lang.String">
+            <column name="gzdw" length="100">
+                <comment>工作单位</comment>
+            </column>
+        </property>
+        <property name="zynx" type="java.lang.String">
+            <column name="zynx" length="100">
+                <comment>职业年限</comment>
+            </column>
+        </property>
+        <property name="jdkm" type="java.lang.String">
+            <column name="jdkm" length="100">
+                <comment>鉴定科目</comment>
+            </column>
+        </property>
+        <property name="bmdd" type="java.lang.String">
+            <column name="bmdd" length="200">
+                <comment>报名地点</comment>
+            </column>
+        </property>
+        <property name="bmjg" type="java.lang.String">
+            <column name="bmjg" length="100">
+                <comment>报名机构</comment>
+            </column>
+        </property>
+        <property name="bmjgbm" type="java.lang.String">
+            <column name="bmjgbm" length="100">
+                <comment>报名机构编码</comment>
+            </column>
+        </property>
+        <property name="khh" type="java.lang.String">
+            <column name="khh" length="100">
+                <comment>开户行</comment>
+            </column>
+        </property>
+        <property name="yhzh" type="java.lang.String">
+            <column name="yhzh" length="100">
+                <comment>银行账号</comment>
+            </column>
+        </property>
+        <property name="lxdh" type="java.lang.String">
+            <column name="lxdh" length="100">
+                <comment>联系电话</comment>
+            </column>
+        </property>
+        <property name="bkxx" type="java.lang.String">
+            <column name="bkxx" length="100">
+                <comment>补考信息</comment>
+            </column>
+        </property>
+        <property name="zpcj" type="java.lang.String">
+            <column name="zpcj" length="100">
+                <comment>照片采集</comment>
+            </column>
+        </property>
+        <property name="lisj" type="java.lang.String">
+            <column name="lisj" length="100">
+                <comment>理论时间</comment>
+            </column>
+        </property>
+        <property name="llkscc" type="java.lang.String">
+            <column name="llkscc" length="100">
+                <comment>理论考试场次</comment>
+            </column>
+        </property>
+        <property name="llkcmc" type="java.lang.String">
+            <column name="llkcmc" length="100">
+                <comment>理论考场名称</comment>
+            </column>
+        </property>
+        <property name="llzwh" type="java.lang.String">
+            <column name="llzwh" length="100">
+                <comment>理论座位号</comment>
+            </column>
+        </property>
+        <property name="scsj" type="java.lang.String">
+            <column name="scsj" length="100">
+                <comment>实操时间</comment>
+            </column>
+        </property>
+        <property name="sckscc" type="java.lang.String">
+            <column name="sckscc" length="100">
+                <comment>实操考试场次</comment>
+            </column>
+        </property>
+        <property name="sckcmc" type="java.lang.String">
+            <column name="sckcmc" length="100">
+                <comment>实操考场名称</comment>
+            </column>
+        </property>
+        <property name="sczwh" type="java.lang.String">
+            <column name="sczwh" length="100">
+                <comment>实操座位号</comment>
+            </column>
+        </property>
+        <property name="wysj" type="java.lang.String">
+            <column name="wysj" length="100">
+                <comment>外语时间</comment>
+            </column>
+        </property>
+        <property name="wykscc" type="java.lang.String">
+            <column name="wykscc" length="100">
+                <comment>外语考试场次</comment>
+            </column>
+        </property>
+        <property name="wykcmc" type="java.lang.String">
+            <column name="wykcmc" length="100">
+                <comment>外语考场名称</comment>
+            </column>
+        </property>
+        <property name="wyzwh" type="java.lang.String">
+            <column name="wyzwh" length="100">
+                <comment>外语座位号</comment>
+            </column>
+        </property>
+        <property name="zhsj" type="java.lang.String">
+            <column name="zhsj" length="100">
+                <comment>综合时间</comment>
+            </column>
+        </property>
+        <property name="zhkscc" type="java.lang.String">
+            <column name="zhkscc" length="100">
+                <comment>综合考试场次</comment>
+            </column>
+        </property>
+        <property name="zhkcmc" type="java.lang.String">
+            <column name="zhkcmc" length="100">
+                <comment>综合考场名称</comment>
+            </column>
+        </property>
+        <property name="zhzwh" type="java.lang.String">
+            <column name="zhzwh" length="100">
+                <comment>综合座位号</comment>
+            </column>
+        </property>
+        <property name="timer" type="java.lang.String">
+            <column name="timer" length="100">
+                <comment>执行时间</comment>
+            </column>
+        </property>
+        <set name="scors" inverse="true" cascade="all">
+            <key>
+                <column name="bmid">
+                    <comment>报名id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Scor" />
+        </set> 
+    </class>
+</hibernate-mapping>

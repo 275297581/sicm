@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Collage" table="collage" lazy="false" catalog="sicm">
+        <id name="xyid" type="java.lang.Integer">
+            <column name="xyid" />
+            <generator class="native" />
+        </id>
+        <property name="xybh" type="java.lang.String">
+            <column name="xybh" length="100">
+                <comment>学院编号</comment>
+            </column>
+        </property>
+        <property name="xymc" type="java.lang.String">
+            <column name="xymc" length="100">
+                <comment>学院名称</comment>
+            </column>
+        </property>
+        <set name="zyxxes" inverse="true">
+            <key>
+                <column name="xyid">
+                    <comment>学院id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Zyxx" />
+        </set>
+    </class>
+</hibernate-mapping>

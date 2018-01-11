@@ -1,0 +1,44 @@
+body {
+		margin:0px;
+		padding:0px;
+		font-size: 12px;
+	}
+	#navigation {
+		margin:0px;
+		padding:0px;
+		width:147px;
+	}
+	#navigation a.head {
+		cursor:pointer;
+		background:url(/pages/images/main_34.gif) no-repeat scroll;
+		display:block;
+		font-weight:bold;
+		margin:0px;
+		padding:5px 0 5px;
+		text-align:center;
+		font-size:12px;
+		color:black;
+		text-decoration:none;
+	}
+	#navigation ul {
+		border-width:0px;
+		margin:0px;
+		padding:0px;
+		text-indent:0px;
+	}
+	#navigation li {
+		list-style:none; display:inline;
+	}
+	#navigation li li a {
+		display:block;
+		font-size:12px;
+		text-decoration: none;
+		text-align:center;
+		padding:3px;
+		color:black;
+	}
+	#navigation li li a:hover {
+		background:url(/pages/images/tab_bg.gif) repeat-x;
+		border:solid 1px #adb9c2;
+		color:black;
+	} 

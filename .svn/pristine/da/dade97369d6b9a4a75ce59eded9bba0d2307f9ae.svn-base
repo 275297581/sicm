@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    <struts>
+    	
+    	<package name="zsrd1" namespace="/" extends="json-default">
+    	 
+    	  	<action name="querymyZSsq" class="zsrdAction" method="queryMyZSSq" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	 <action name="querymy" class="zsrdAction" method="queryMy" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="addzsrd" class="zsrdAction" method="addZsrd" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="deletezs" class="zsrdAction" method="deleteZs" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="queryOneZs" class="zsrdAction" method="queryOneZs" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="modifyzs" class="zsrdAction" method="modifyZs" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="querySpZs" class="zsrdAction" method="querySpZs" >
+    	  		<result name="success" type="json"></result>
+   	  		</action>
+   	  		<action name="bhzs" class="zsrdAction" method="bhZs" >
+    	  		<result name="success" type="json"></result>
+   	  		</action>
+   	  		<action name="throwZs" class="zsrdAction" method="throwZs" >
+    	  		<result name="success" type="json"></result>
+   	  		</action>
+   	  		<action name="showZs" class="zsrdAction" method="showZs" >
+    	  		<result name="success" type="json"></result>
+   	  		</action>
+   	  	</package>
+    </struts>

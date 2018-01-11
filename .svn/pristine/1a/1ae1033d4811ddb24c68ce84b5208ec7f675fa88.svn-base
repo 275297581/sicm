@@ -1,0 +1,18 @@
+a:link {
+	font-size: 13px;
+	line-height: 25px;
+	color: #333333;
+	text-decoration: none;
+}
+a:hover {
+	font-size: 13px;
+	line-height: 25px;
+	color: #3399FF;
+	text-decoration: none;
+}
+a:visited {
+	font-size: 13px;
+	line-height: 25px;
+	color: #333333;
+	text-decoration: none;
+}

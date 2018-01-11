@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Zyxx" table="zyxx" lazy="false" catalog="sicm">
+        <id name="zyid" type="java.lang.Integer">
+            <column name="zyid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="collage" class="com.iking.beans.Collage" fetch="select">
+            <column name="xyid">
+                <comment>学院id</comment>
+            </column>
+        </many-to-one>
+        <property name="zybh" type="java.lang.String">
+            <column name="zybh" length="100">
+                <comment>专业编号</comment>
+            </column>
+        </property>
+        <property name="zymc" type="java.lang.String">
+            <column name="zymc" length="100">
+                <comment>专业名称</comment>
+            </column>
+        </property> 
+        <set name="stus" inverse="true">
+            <key>
+                <column name="zyid">
+                    <comment>专业id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Stu" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="sys" namespace="/" extends="json-default">
+
+		<action name="showuser" class="userManageAction" method="showUser">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="modifyuser" class="userManageAction" method="modifyUser">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="adduser" class="userManageAction" method="addUser">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="showurole" class="userManageAction" method="showURole">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="queryOneUser" class="userManageAction" method="queryOneUser">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="modifyurole" class="userManageAction" method="modifyURole">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="deleteuser" class="userManageAction" method="deleteUser">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="modifypwdsysuser" class="userManageAction" method="modifyPwd">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="modifypwd1" class="userManageAction" method="modifyPwd1">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="restpwd" class="userManageAction" method="restPwd">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="selectUname" class="userManageAction" method="selectUname">
+			<result name="success" type="json"></result>
+		</action>
+		<!--自定义查询 -->
+		<action name="selectZdy" class="userManageAction" method="selecWtZdy">
+			<result name="success" type="json"></result>
+		</action>
+		<!-- 用户登录显示用户的所选课程信息 -->
+		<action name="selectUser" class="userManageAction" method="selectUser">
+			<result name="success" type="json"></result>
+		</action>
+
+
+		<action name="showrole" class="roleManageAction" method="showRole">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="deleterole" class="roleManageAction" method="deleteRole">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="getonerole" class="roleManageAction" method="getARole">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="modifyrole" class="roleManageAction" method="mofifyRole">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="addrole" class="roleManageAction" method="addRole">
+			<result name="success" type="json"></result>
+		</action>
+
+		<action name="showrolemenu" class="roleManageAction" method="showRoleMenu">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="modifyrolemenu" class="roleManageAction" method="modifyRoleMenu">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="backupdb" class="backUpDbAction" method="backupDB">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="querydbbackup" class="backUpDbAction" method="queryDBBackup">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="returndb" class="backUpDbAction" method="returnDB">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="deletedb" class="backUpDbAction" method="deleteDB">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="showbj" class="xyBjAction" method="showBJ">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="modifyClass" class="xyBjAction" method="modifyClass">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="saveclass" class="xyBjAction" method="saveclass">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="deleteClass" class="xyBjAction" method="deleteClass">
+			<result name="success" type="json"></result>
+		</action>
+		<action name="queryclass" class="xyBjAction" method="queryclass">
+			<result name="success" type="json"></result>
+		</action>
+
+		<!-- 从新加载系统开始参数数据 -->
+		<action name="initSystemParam" class="roleManageAction" method="initSystemParam">
+			<result name="success" type="json"></result>
+		</action>
+	</package>
+</struts>

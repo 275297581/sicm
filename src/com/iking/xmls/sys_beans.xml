@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+	 <bean id="userManageAction" class="com.iking.sys.action.UserManageAction"
+		scope="prototype" />
+	
+	 <bean id="userServer" class="com.iking.sys.server.UserServer" />
+ 
+ 	 <bean id="roleManageAction" class="com.iking.sys.action.RoleManageAction"
+		scope="prototype" />
+	 <bean id="roleServer" class="com.iking.sys.server.RoleServer" />
+  
+  	<bean id="backUpDbAction" class="com.iking.sys.action.BackUpDbAction"
+		scope="prototype" />
+	 <bean id="backUpDbServer" class="com.iking.sys.server.BackUpDbServer" />
+	 
+	 <bean id="xyBjAction" class="com.iking.sys.action.XyBjAction" scope="prototype" ></bean>
+	 <bean id="xyBjServer" class="com.iking.sys.server.XyBjServer"></bean>
+	 
+</beans>

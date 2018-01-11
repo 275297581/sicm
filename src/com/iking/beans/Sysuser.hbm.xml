@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Sysuser" table="sysuser" catalog="sicm">
+        <id name="uid" type="java.lang.Integer">
+            <column name="UID" />
+            <generator class="native"></generator>
+        </id>
+        <property name="userId" type="java.lang.String">
+            <column name="UserID" length="20" not-null="true">
+                <comment>用户登录名</comment>
+            </column>
+        </property>
+        <property name="userName" type="java.lang.String">
+            <column name="UserName" length="20" not-null="true">
+                <comment>用户名</comment>
+            </column>
+        </property>
+        <property name="userPwd" type="java.lang.String">
+            <column name="UserPwd" length="20" not-null="true">
+                <comment>密码</comment>
+            </column>
+        </property>
+        <property name="dep" type="java.lang.String">
+            <column name="Dep" length="20">
+                <comment>部门</comment>
+            </column>
+        </property>
+        <property name="locked" type="java.lang.Boolean">
+            <column name="Locked" not-null="true">
+                <comment>是否锁定</comment>
+            </column>
+        </property>
+        <property name="createTime" type="java.lang.String">
+            <column name="CreateTime" length="20" not-null="true">
+                <comment>注册时间</comment>
+            </column>
+        </property>
+        <property name="descr" type="java.lang.String">
+            <column name="Descr" length="200">
+                <comment>描述</comment>
+            </column>
+        </property>
+        <property name="stopTime" type="java.lang.String">
+            <column name="StopTime" length="20">
+                <comment>停用时间</comment>
+            </column>
+        </property>
+        <property name="stopPerson" type="java.lang.String">
+            <column name="StopPerson" length="20">
+                <comment>停用人</comment>
+            </column>
+        </property>
+        <property name="xh" type="java.lang.String">
+            <column name="Xh" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="xb" type="java.lang.String">
+            <column name="Xb" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sfzh" type="java.lang.String">
+            <column name="Sfzh" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="xymc" type="java.lang.String">
+            <column name="Xymc" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="zymc" type="java.lang.String">
+            <column name="Zymc" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="Bjmc" type="java.lang.String">
+            <column name="bjmc" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="zyfx" type="java.lang.String">
+            <column name="Zyfx" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="nj" type="java.lang.String">
+            <column name="Nj" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="zzmm" type="java.lang.String">
+            <column name="Zzmm" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="lxdh" type="java.lang.String">
+            <column name="Lxdh" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="gj" type="java.lang.String">
+            <column name="Gj" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="sxkm" type="java.lang.String">
+            <column name="Sxkm" length="20">
+                <comment></comment>
+            </column>
+        </property>
+        <property name="remark1" type="java.lang.String">
+            <column name="Remark1" length="20">
+                <comment>备用1</comment>
+            </column>
+        </property>
+        <property name="remark2" type="java.lang.String">
+            <column name="Remark2" length="20">
+                <comment>备用2</comment>
+            </column>
+        </property>
+        <set name="userroles" inverse="true" cascade="delete">
+            <key>
+                <column name="UID" not-null="true">
+                    <comment>用户编号</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Userrole" />
+        </set>
+    </class>
+</hibernate-mapping>

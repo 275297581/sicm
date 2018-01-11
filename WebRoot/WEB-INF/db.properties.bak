@@ -1,0 +1,7 @@
+driver=com.mysql.jdbc.Driver
+url=jdbc\:mysql\://localhost\:3306/SICM
+username=root
+password=root
+rootpassword=root
+databaseName=sicm
+address=localhost

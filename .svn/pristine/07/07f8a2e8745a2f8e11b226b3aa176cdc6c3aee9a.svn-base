@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- 启动注解模式 -->
+	<context:annotation-config />
+	<!-- 加载数据库配置文件 -->
+	<bean id="propertyConfigurer" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>/WEB-INF/db.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<bean id="datasource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+		<property name="driverClassName" value="${driver}" />
+		<property name="url" value="${url}" />
+		<property name="username" value="${username}" />
+		<property name="password" value="${password}" />
+		<property name="initialSize" value="3" />
+		<property name="maxActive" value="300" />
+		<property name="maxIdle" value="2" />
+		<property name="minIdle" value="1" />
+	</bean>
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource" ref="datasource" />
+		<property name="mappingLocations">
+			<value>classpath:/com/iking/beans/*.hbm.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<value>
+				hibernate.hbm2ddl.auto=update
+				hibernate.dialect=org.hibernate.dialect.MySQLDialect
+				hibernate.show_sql=true
+				hibernate.format_sql =true
+			</value>
+		</property>
+	</bean>
+
+	<!-- 事务管理 -->
+	<bean id="transaction" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<tx:annotation-driven transaction-manager="transaction" />
+	<import resource="classpath:/com/iking/xmls/login_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/ggtz_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/jcsj_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/jdpxjg_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/jltj_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/ksxxcx_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/sys_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/zstj_beans.xml" />
+	<import resource="classpath:/com/iking/xmls/zsrd_beans.xml" />
+	<!--<bean class="com.iking.basic.Instation"/> -->
+	<bean class="com.iking.basic.Instation" />
+
+
+
+	<!-- 下面方法是定时器方法，在设定的时间段内自动执行方法 -->
+	<bean id="job1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+		<property name="targetObject">
+			<bean class="com.iking.login.action.Job1" />
+		</property>
+		<property name="targetMethod" value="doJob1" />
+		<property name="concurrent" value="false" /><!-- 作业不并发调度 -->
+	</bean>
+
+
+	<bean id="cronTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+		<property name="jobDetail" ref="job1" />
+		<property name="cronExpression" value="0 0/00 12 * * ?" />
+	</bean>
+
+	<!-- 该参数指定的就是之前配置的触发器的名字 -->
+	<bean class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+		<property name="triggers">
+			<list>
+				<ref bean="cronTrigger" />
+			</list>
+		</property>
+	</bean>
+
+
+</beans>

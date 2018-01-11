@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd
+				http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+
+ 	<bean id="stuXlsAction" class="com.iking.jcsj.action.StuXlsAction"
+		scope="prototype" />
+	<bean id="stuXlsServer" class="com.iking.jcsj.server.StuXlsServer" />
+	
+	<bean id="zyzsXlsAction" class="com.iking.jcsj.action.ZyzsXlsAction"
+		scope="prototype" />
+	<bean id="zyzsXlsServer" class="com.iking.jcsj.server.ZyzsXlsServer" />
+  
+  	<bean id="stuBmXlsAction" class="com.iking.jcsj.action.StuBmXlsAction"
+		scope="prototype" />
+	<bean id="stuBmXlsServer" class="com.iking.jcsj.server.StuBmXlsServer" />
+	
+	<bean id="stuScoreXlsAction" class="com.iking.jcsj.action.StuScoreXlsAction"
+	scope="prototype" />
+	<bean id="stuScoreXlsServer" class="com.iking.jcsj.server.StuScoreXlsServer" />
+	
+	<bean id="kszsXlsAction" class="com.iking.jcsj.action.KszsXlsAction"
+		scope="prototype" />
+	<bean id="kszsXlsServer" class="com.iking.jcsj.server.KszsXlsServer" />
+	
+	<bean id="xyZyXlsAction" class="com.iking.jcsj.action.XyZyXlsAction"
+		scope="prototype" />
+	<bean id="xyZyXlsServer" class="com.iking.jcsj.server.XyZyXlsServer" />
+	
+	<bean id="bankXlsAction" class="com.iking.jcsj.action.BankXlsAction"
+		scope="prototype" />
+	<bean id="bankXlsServer" class="com.iking.jcsj.server.BankXlsServer" />
+</beans>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Stu" table="stu" lazy="false" catalog="sicm">
+        <id name="xsid" type="java.lang.Integer">
+            <column name="xsid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="zyxx" class="com.iking.beans.Zyxx" fetch="select">
+            <column name="zyid">
+                <comment>专业id</comment>
+            </column>
+        </many-to-one>
+        <property name="xh" type="java.lang.String">
+            <column name="xh" length="100">
+                <comment>学号</comment>
+            </column>
+        </property> 
+        <property name="xm" type="java.lang.String">
+            <column name="xm" length="100">
+                <comment>姓名</comment>
+            </column>
+        </property>
+        <property name="xb" type="java.lang.String">
+            <column name="xb" length="100">
+                <comment>性别</comment>
+            </column>
+        </property>
+        <property name="csny" type="java.lang.String">
+            <column name="csny" length="100">
+                <comment>出生年月</comment>
+            </column>
+        </property>
+        <property name="mz" type="java.lang.String">
+            <column name="mz" length="100">
+                <comment>民族</comment>
+            </column>
+        </property>
+        <property name="xz" type="java.lang.String">
+            <column name="xz" length="100">
+                <comment>学制</comment>
+            </column>
+        </property>
+        <property name="xjzt" type="java.lang.String">
+            <column name="xjzt" length="100">
+                <comment>学籍状态</comment>
+            </column>
+        </property>
+        <property name="nj" type="java.lang.String">
+            <column name="nj" length="100">
+                <comment>年级</comment>
+            </column>
+        </property>
+        <property name="bjmc" type="java.lang.String">
+            <column name="bjmc" length="100">
+                <comment>班级名称</comment>
+            </column>
+        </property>
+        <property name="rxrq" type="java.lang.String">
+            <column name="rxrq" length="100">
+                <comment>入学日期</comment>
+            </column>
+        </property>
+        <property name="xslb" type="java.lang.String">
+            <column name="xslb" length="100">
+                <comment>学生类别</comment>
+            </column>
+        </property>
+        <property name="byxx" type="java.lang.String">
+            <column name="byxx" length="100">
+                <comment>毕业学校</comment>
+            </column>
+        </property>
+        <property name="rxfs" type="java.lang.String">
+            <column name="rxfs" length="100">
+                <comment>入学方式</comment>
+            </column>
+        </property>
+        <property name="bxxs" type="java.lang.String">
+            <column name="bxxs" length="100">
+                <comment>办学形式</comment>
+            </column>
+        </property>
+        <property name="pycc" type="java.lang.String">
+            <column name="pycc" length="100">
+                <comment>培养层次</comment>
+            </column>
+        </property>
+        <property name="syszd" type="java.lang.String">
+            <column name="syszd" length="200">
+                <comment>生源所在地</comment>
+            </column>
+        </property>
+        <property name="jg" type="java.lang.String">
+            <column name="jg" length="200">
+                <comment>籍贯</comment>
+            </column>
+        </property>
+        <property name="csd" type="java.lang.String">
+            <column name="csd" length="200">
+                <comment>出生地</comment>
+            </column>
+        </property>
+        <property name="jtdz" type="java.lang.String">
+            <column name="jtdz" length="200">
+                <comment>家庭地址</comment>
+            </column>
+        </property>
+        <property name="yzbm" type="java.lang.String">
+            <column name="yzbm" length="100">
+                <comment>邮政编码</comment>
+            </column>
+        </property>
+        <property name="lxdh" type="java.lang.String">
+            <column name="lxdh" length="100">
+                <comment>联系电话</comment>
+            </column>
+        </property>
+        <property name="ywxw" type="java.lang.String">
+            <column name="ywxw" length="100">
+                <comment>有无学位</comment>
+            </column>
+        </property>
+        <property name="zzmm" type="java.lang.String">
+            <column name="zzmm" length="100">
+                <comment>政治面貌</comment>
+            </column>
+        </property>
+        <property name="jrsj" type="java.lang.String">
+            <column name="jrsj" length="100">
+                <comment>加入时间</comment>
+            </column>
+        </property>
+        <property name="jkzk" type="java.lang.String">
+            <column name="jkzk" length="200">
+                <comment>健康状况</comment>
+            </column>
+        </property>
+        <property name="tc" type="java.lang.String">
+            <column name="tc" length="200">
+                <comment>特长</comment>
+            </column>
+        </property>
+        <property name="sfzh" type="java.lang.String">
+            <column name="sfzh" length="100">
+                <comment>身份证号</comment>
+            </column>
+        </property>
+        <property name="mm" type="java.lang.String">
+            <column name="mm" length="100">
+                <comment>密码</comment>
+            </column>
+        </property>
+        <property name="hkzt" type="java.lang.String">
+            <column name="hkzt" length="100">
+                <comment>户口状态</comment>
+            </column>
+        </property>
+        <property name="jszh" type="java.lang.String">
+            <column name="jszh" length="100">
+                <comment>借书证号</comment>
+            </column>
+        </property>
+        <property name="ylzh" type="java.lang.String">
+            <column name="ylzh" length="100">
+                <comment>医疗证号</comment>
+            </column>
+        </property>
+         <property name="xy" type="java.lang.String">
+            <column name="xy" length="100">
+                <comment>学院 </comment>
+            </column>
+        </property>
+        
+        
+             <property name="zy" type="java.lang.String">
+            <column name="zy" length="100">
+            <comment>专业 </comment>
+            </column>
+        </property>
+        <property name="ssh" type="java.lang.String">
+            <column name="ssh" length="100">
+                <comment>宿舍号</comment>
+            </column>
+        </property>
+        <property name="xxnx" type="java.lang.String">
+            <column name="xxnx" length="100">
+                <comment>限学年限</comment>
+            </column>
+        </property>
+        <property name="rxzf" type="java.lang.String">
+            <column name="rxzf" length="100">
+                <comment>入学总分</comment>
+            </column>
+        </property>
+        <property name="bz" type="java.lang.String">
+            <column name="bz" length="4000">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="timer" type="java.lang.String">
+            <column name="timer" length="100">
+                <comment>执行时间</comment>
+            </column>
+        </property>
+        <property name="khh" type="java.lang.String">
+            <column name="khh" length="100">
+                <comment>开户行</comment>
+            </column>
+        </property>
+        <property name="yhzh" type="java.lang.String">
+            <column name="yhzh" length="100">
+                <comment>银行账号</comment>
+            </column>
+        </property>
+        <set name="xwzsrds" inverse="true">
+            <key>
+                <column name="xsid">
+                    <comment>学生id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Xwzsrd" />
+        </set>
+        <set name="bmxxes" inverse="true"  cascade="all">
+            <key>
+                <column name="xsid">
+                    <comment>学生id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Bmxx"/>
+        </set>
+        <set name="kszses" inverse="true"  cascade="all">
+            <key>
+                <column name="xsid">
+                    <comment>学生id</comment>
+                </column>
+            </key>
+            <one-to-many class="com.iking.beans.Kszs" />
+        </set>
+    </class>
+</hibernate-mapping>

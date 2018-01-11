@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Timelock" lazy="false" table="timelock" catalog="sicm">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="native" />
+        </id>
+        
+        <property name="begintime" type="java.lang.String">
+            <column name="begintime" length="100">
+                <comment>开始时间</comment>
+            </column>
+        </property>
+        <property name="endtime" type="java.lang.String">
+            <column name="endtime" length="100">
+                <comment>结束时间</comment>
+            </column>
+        </property>
+        <property name="runtime" type="java.lang.String">
+            <column name="runtime" length="100">
+                <comment>运行时间</comment>
+            </column>
+        </property>
+         
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.iking.beans.Stuclass" table="stuclass" lazy="false" catalog="sicm">
+        <id name="bjid" type="java.lang.Integer">
+            <column name="bjid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="zyxx" class="com.iking.beans.Zyxx" fetch="select">
+            <column name="zyid">
+                <comment>班级id</comment>
+            </column>
+        </many-to-one>
+        <property name="bjbh" type="java.lang.String">
+            <column name="bjbh" length="100">
+                <comment>班级编号</comment>
+            </column>
+        </property>
+        <property name="bjmc" type="java.lang.String">
+            <column name="bjmc" length="100">
+                <comment>班级名称</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

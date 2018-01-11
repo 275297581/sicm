@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping>
+    <class name="com.iking.beans.Xwzsrd" table="xwzsrd" lazy="false"  catalog="sicm">
+        <id name="xwrdid" type="java.lang.Integer">
+            <column name="xwrdid" />
+            <generator class="native" />
+        </id>
+        <many-to-one name="stu" class="com.iking.beans.Stu" fetch="select">
+            <column name="xsid">
+                <comment>学生id</comment>
+            </column>
+        </many-to-one>
+        <many-to-one name="zyzs" class="com.iking.beans.Zyzs" fetch="select">
+            <column name="zsid">
+                <comment>证书id</comment>
+            </column>
+        </many-to-one>
+        <property name="sfzh" type="java.lang.String">
+            <column name="sfzh" length="100">
+                <comment>身份证号</comment>
+            </column>
+        </property>
+        <property name="sqzs" type="java.lang.String">
+            <column name="sqzs" length="100">
+                <comment>申请证书</comment>
+            </column>
+        </property>
+        <property name="zsbh" type="java.lang.String">
+            <column name="zsbh" length="100">
+                <comment>证书编号</comment>
+            </column>
+        </property>
+        <property name="zskqjg" type="java.lang.String">
+            <column name="zskqjg" length="100">
+                <comment>证书考取机构</comment>
+            </column>
+        </property>
+        <property name="zt" type="java.lang.String">
+            <column name="zt" length="100">
+                <comment>状态</comment>
+            </column>
+        </property>
+        <property name="bz" type="java.lang.String">
+            <column name="bz" length="1000">
+                <comment>备注</comment>
+            </column>
+        </property>
+        <property name="sqsj" type="java.lang.String">
+            <column name="sqsj" length="100">
+                <comment>申请时间</comment>
+            </column>
+        </property>
+        <property name="mark" type="java.lang.String">
+            <column name="mark" length="100">
+                <comment>申请人</comment>
+            </column>
+        </property>
+        <property name="money" type="java.lang.String">
+            <column name="money" length="100">
+                <comment>奖励金额</comment>
+            </column>
+        </property>
+        <property name="xf" type="java.lang.String">
+            <column name="xf" length="100">
+                <comment>奖励学分</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+    
+    <struts>
+    	
+    	<package name="jltj2" namespace="/" extends="json-default">
+	   	  	 
+	   	  	<action name="queryjl" class="jlManageAction" method="queryJL" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="modifyJl" class="jlManageAction" method="modifyJl" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="queryJlById" class="jlManageAction" method="queryJlById" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<!-- 查询学生奖励明细不转换数据信息 -->
+    	  	<action name="queryStuJlExtends" class="stuJlAction" method="queryStuJlExtends" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="queryStuJl" class="stuJlAction" method="queryStuJl" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="queryStuJlAll" class="stuJlAction" method="queryStuJlAll" >
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	
+    	  	<action name="queryJl"  class="stuJlAction" method="queryJl">
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="queryClassTj"  class="stuJlAction" method="queryClassTj">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+    	  	<action name="savezyzs"  class="stuJlAction" method="savezyzs">
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="queryzyzs"  class="stuJlAction" method="queryzyzs">
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="updatezyzs"  class="stuJlAction" method="updatezyzs">
+    	  		<result name="success" type="json"></result> 
+    	  	</action> 
+    	  	<action name="deletezyzs"  class="stuJlAction" method="deletezyzs">
+    	  		<result name="success" type="json"></result> 
+    	  	</action>
+   	  	 </package> 
+   	  	
+   	  	<package name="jltj1" namespace="/" extends="struts-default">
+	   	  
+	   	  <action name="exportStuJl" class="stuJlAction" method="exportStuJl">
+    	  		<result name="success" type="stream"> 
+    	  			<param name="inputName">inputStream</param> 
+			        <param name="contentDisposition">
+			            attachment;filename="${filename}"
+			        </param>
+			        <param name="bufferSize">8192</param> 
+    	  		</result>
+    	  </action>
+    	  <action name="printTotalJl" class="jlManageAction" method="printTotalJl">
+    	  		<result name="success" type="stream"> 
+    	  			<param name="inputName">inputStream</param> 
+			        <param name="contentDisposition">
+			            attachment;filename="${filename}"
+			        </param>
+			        <param name="bufferSize">8192</param> 
+    	  		</result>
+    	  </action>
+    	 <action name="exportWorkForm" class="workFormAction" method="exportWorkForm">
+    	 	<result name="success" type="stream"> 
+    	  			<param name="inputName">inputStream</param> 
+			        <param name="contentDisposition">
+			            attachment;filename="${filename}"
+			        </param>
+			        <param name="bufferSize">8192</param> 
+   	  		</result>
+    	 </action> 
+   	  </package>
+   	  	 
+    </struts>
